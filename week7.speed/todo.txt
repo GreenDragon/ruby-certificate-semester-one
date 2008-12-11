@@ -1,0 +1,83 @@
+convert to hoe and provide bin/itunes_miner
+update itunes xml file
+
+parse xml to sql3lite
+match interesting tunes to last.fm
+
+http://www.last.fm/music/B.B.+King/+similar
+http://www.last.fm/music/B.B.+King/+albums
+
+Overview
+Biography
+Photos
+Videos
+Albums
+Tracks
+Events
+News
+Charts
+Similar Artists
+Tags
+Listeners
+Journal
+Groups
+
+graph info to graphviz or gnuplot or ??
+
+http://phobos.apple.com/WebObjects/MZStoreServices.woa/wa/MRSS/rssGeneratorInput 
+
+http://ax.phobos.apple.com.edgesuite.net/WebObjects/MZStore.woa/wpa/MRSS/topsongs/genre=666/limit=10/rss.xml
+
+http://phobos.apple.com/WebObjects/MZStoreServices.woa/wa/MRSS/rssGeneratorInput
+
+http://phobos.apple.com/WebObjects/MZStoreServices.woa/wa/MRSS/rssGeneratorInput
+
+Disabled Tracks?
+
+Track ID
+Total Time
+Disk Count
+Track Count
+File Type
+File Creator
+File Folder Count
+Library Folder Count
+
+Album
+Album Artist
+Album Rating
+ Artist
+Beats Per Minute
+ Bit Rate
+Category
+Comment
+Composer
+ Date Added
+ Date Modified
+Description
+ Disc Number
+Episode ID
+Equalizer
+ Genre
+Grouping
+ Kind
+Last Played
+Last Skipped
+Play Count
+Rating
+Release Date
+Ringtone
+ Sample Rate
+Season
+Show
+ Size
+Skip Count
+Sort Album
+Sort Album Artist
+Sort Artist
+Sort Composer
+Sort Name
+Sort Show
+Time
+ Track Number
+ Year

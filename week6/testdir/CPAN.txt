@@ -1,0 +1,1 @@
+ Digest::SHA1 HTML::Parser Net::DNS LWP HTTP::Date IO::Zlib Archive::Tar MIME::Base64 DB_File Net::SMTP Mail::SPF IP::Country::Fast IO::Socket:SSL Compress::Zlib  IO::Compress::Bzip2 Time::HiRes Mail::DKIM Mail::DomainKeys Encode::Detect Net::Daemon Sys::Syslog  Getopt::Long URI::Escape

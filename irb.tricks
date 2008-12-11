@@ -1,0 +1,21 @@
+jhowe@starfox:~
+$ irb
+>> s="Last Name"
+=> "Last Name"
+>> s.downcase
+=> "last name"
+>> s.downcase.split
+=> ["last", "name"]
+>> s.downcase.split.first
+=> "last"
+>> s.downcase.split
+=> ["last", "name"]
+>> s.downcase.split.join("_")
+=> "last_name"
+>> s.downcase.split.join("_").intern
+=> :last_name
+>> s="Last"
+=> "Last"
+>> s.downcase.split.join("_").intern
+=> :last
+>> 

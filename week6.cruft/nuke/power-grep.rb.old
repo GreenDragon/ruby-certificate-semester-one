@@ -1,0 +1,44 @@
+#!/usr/bin/env ruby -w
+
+require 'optparse'
+
+class PowerGrep
+  # can have many sources
+  @@sources = []
+  
+  attr_accessor :case, :fast, :quiet, :search
+    
+  def initialize
+  end
+  
+  def parse_args(ARGV)
+    a = ARGV.to_a
+  end
+  
+  opts = OptionParser.new do |opts|
+  	opts.banner = "Usage: " + $0 + " [options]"
+  	opts.on("-i", "--[no-]verbose", "Case insensitive grep") do |i|
+  		options[:insensitive] = 1
+  	end
+  	opts.on("-f", "", "Fast search, no regex replacements") do |f|
+  	  options[:fast] = 1
+	  end
+	  opts.on("-q", "", "Quiet, return match code via exit code") do |q|
+	    options[:quiet] = 1
+    end
+  end
+  #.parse! rescue return false
+
+  begin
+  	opts.parse!(ARGV)
+  rescue  OptionParser::InvalidOption, OptionParser::InvalidArgument,
+         OptionParser::MissingArgument => e
+  	puts opts
+  	puts
+  	puts e.message
+  	exit!
+  end
+
+  p options
+  p ARGV
+end

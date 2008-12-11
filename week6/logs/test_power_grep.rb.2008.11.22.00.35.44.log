@@ -1,0 +1,12 @@
+Loaded suite test/test_power_grep
+Started
+.............../source.txt: search
+..../source.txt: search
+.http://www.zenspider.com: <H3><A HREF="/seattle.rb">Seattle.rb</A></H3>
+..http://www.zenspider.com: <H2>Seattle.rb &amp; Ruby</H2>
+http://www.zenspider.com: <H3><A HREF="/seattle.rb">Seattle.rb</A></H3>
+http://www.zenspider.com: <P>Home of the <em>Seattle Ruby Brigade!</em>, North America's biggest and best Ruby users group.</P>
+..........
+Finished in 0.565369 seconds.
+
+30 tests, 38 assertions, 0 failures, 0 errors

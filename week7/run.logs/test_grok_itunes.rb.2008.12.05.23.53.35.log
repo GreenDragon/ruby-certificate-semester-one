@@ -1,0 +1,7 @@
+/Library/Ruby/Gems/1.8/gems/sqlite3-ruby-1.2.4/lib/sqlite3_api.bundle: warning: global variable `$swig_runtime_data_type_pointer2' not initialized
+Loaded suite test/test_grok_itunes
+Started
+.....................................................................
+Finished in 3.564374 seconds.
+
+69 tests, 117 assertions, 0 failures, 0 errors

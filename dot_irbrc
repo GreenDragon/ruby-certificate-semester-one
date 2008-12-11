@@ -1,0 +1,30 @@
+# -*- ruby -*-
+
+unless defined? IRB_HISTFILE then
+  $-w = true unless File.file? "config/environment.rb"
+
+  require 'irb/completion'
+  ARGV.concat [ "--readline", "--prompt-mode", "simple" ]
+
+  IRB.conf[:PROMPT_MODE] = :SIMPLE
+  IRB_HISTFILE = "~/.irb.hist"
+  IRB_MAXHISTSIZE = 100
+
+  begin
+    if defined? Readline::HISTORY
+      histfile = File::expand_path( IRB_HISTFILE )
+      if File::exists?( histfile )
+        lines = IO::readlines( histfile ).collect {|line| line.chomp}
+        Readline::HISTORY.push( *lines )
+      end
+      
+      Kernel::at_exit {
+        lines = Readline::HISTORY.to_a.reverse.uniq.reverse
+        lines = lines[ -IRB_MAXHISTSIZE, IRB_MAXHISTSIZE ] if lines.nitems > IRB_MAXHISTSIZE
+        File::open( histfile, File::WRONLY|File::CREAT|File::TRUNC ) {|ofh|
+          lines.each {|line| ofh.puts line }
+        }
+      }
+    end
+  end
+end

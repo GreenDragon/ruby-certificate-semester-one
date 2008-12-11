@@ -1,0 +1,23 @@
+
+  RubyGems is a sophisticated package manager for Ruby.  This is a
+  basic help message containing pointers to more information.
+
+    Usage:
+      gem -h/--help
+      gem -v/--version
+      gem command [arguments...] [options...]
+
+    Examples:
+      gem install rake
+      gem list --local
+      gem build package.gemspec
+      gem help install
+
+    Further help:
+      gem help commands            list all 'gem' commands
+      gem help examples            show some examples of usage
+      gem help platforms           show information about platforms
+      gem help <COMMAND>           show help on COMMAND
+                                     (e.g. 'gem help install')
+    Further information:
+      http://rubygems.rubyforge.org

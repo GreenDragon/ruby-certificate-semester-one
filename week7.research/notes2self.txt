@@ -1,0 +1,10 @@
+class TestXML
+	grok = XML.new
+	grok.parsexml
+	@@grok = grok.data
+	
+	def setup
+		@grok = XML.new
+		@grok.parse_xml(@@grok)
+		
+		@grok.tracks 

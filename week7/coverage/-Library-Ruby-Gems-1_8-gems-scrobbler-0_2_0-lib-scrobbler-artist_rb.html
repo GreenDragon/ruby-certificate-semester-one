@@ -1,0 +1,737 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'><head><title>/Library/Ruby/Gems/1.8/gems/scrobbler-0.2.0/lib/scrobbler/artist.rb - C0 code coverage information</title>
+    <style type='text/css'>body { background-color: rgb(240, 240, 245); }</style>
+    <style type='text/css'>span.cross-ref-title {
+ font-size: 140%;
+}
+span.cross-ref a {
+ text-decoration: none;
+}
+span.cross-ref {
+ background-color:#f3f7fa;
+ border: 1px dashed #333;
+ margin: 1em;
+ padding: 0.5em;
+ overflow: hidden;
+}
+a.crossref-toggle {
+ text-decoration: none;
+}
+span.marked0 {
+ background-color: rgb(185, 210, 200);
+ display: block;
+}
+span.marked1 {
+ background-color: rgb(190, 215, 205);
+ display: block;
+}
+span.inferred0 {
+ background-color: rgb(175, 200, 200);
+ display: block;
+}
+span.inferred1 {
+ background-color: rgb(180, 205, 205);
+ display: block;
+}
+span.uncovered0 {
+ background-color: rgb(225, 110, 110);
+ display: block;
+}
+span.uncovered1 {
+ background-color: rgb(235, 120, 120);
+ display: block;
+}
+span.overview {
+ border-bottom: 8px solid black;
+}
+div.overview {
+ border-bottom: 8px solid black;
+}
+body {
+ font-family: verdana, arial, helvetica;
+}
+div.footer {
+ font-size: 68%;
+ margin-top: 1.5em;
+}
+h1, h2, h3, h4, h5, h6 {
+ margin-bottom: 0.5em;
+}
+h5 {
+ margin-top: 0.5em;
+}
+.hidden {
+ display: none;
+}
+div.separator {
+ height: 10px;
+}
+/* Commented out for better readability, esp. on IE */
+/*
+table tr td, table tr th {
+ font-size: 68%;
+}
+td.value table tr td {
+ font-size: 11px;
+}
+*/
+table.percent_graph {
+ height: 12px;
+ border: #808080 1px solid;
+ empty-cells: show;
+}
+table.percent_graph td.covered {
+ height: 10px;
+ background: #00f000;
+}
+table.percent_graph td.uncovered {
+ height: 10px;
+ background: #e00000;
+}
+table.percent_graph td.NA {
+ height: 10px;
+ background: #eaeaea;
+}
+table.report {
+ border-collapse: collapse;
+ width: 100%;
+}
+table.report td.heading {
+ background: #dcecff;
+ border: #d0d0d0 1px solid;
+ font-weight: bold;
+ text-align: center;
+}
+table.report td.heading:hover {
+ background: #c0ffc0;
+}
+table.report td.text {
+ border: #d0d0d0 1px solid;
+}
+table.report td.value,
+table.report td.lines_total,
+table.report td.lines_code {
+ text-align: right;
+ border: #d0d0d0 1px solid;
+}
+table.report tr.light {
+ background-color: rgb(240, 240, 245);
+}
+table.report tr.dark {
+ background-color: rgb(230, 230, 235);
+}
+</style>
+    <script type='text/javascript'>
+// <![CDATA[
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make cross-references hidden by default
+  document.writeln( "<style type=\"text/css\">span.cross-ref { display: none }</style>" )
+  // ]]>
+</script>
+    <style type='text/css'>span.run0 {
+  background-color: rgb(178, 204, 255);
+  display: block;
+}
+span.run1 {
+  background-color: rgb(178, 206, 255);
+  display: block;
+}
+span.run2 {
+  background-color: rgb(178, 209, 255);
+  display: block;
+}
+span.run3 {
+  background-color: rgb(178, 211, 255);
+  display: block;
+}
+span.run4 {
+  background-color: rgb(178, 214, 255);
+  display: block;
+}
+span.run5 {
+  background-color: rgb(178, 218, 255);
+  display: block;
+}
+span.run6 {
+  background-color: rgb(178, 220, 255);
+  display: block;
+}
+span.run7 {
+  background-color: rgb(178, 223, 255);
+  display: block;
+}
+span.run8 {
+  background-color: rgb(178, 225, 255);
+  display: block;
+}
+span.run9 {
+  background-color: rgb(178, 228, 255);
+  display: block;
+}
+span.run10 {
+  background-color: rgb(178, 232, 255);
+  display: block;
+}
+span.run11 {
+  background-color: rgb(178, 234, 255);
+  display: block;
+}
+span.run12 {
+  background-color: rgb(178, 237, 255);
+  display: block;
+}
+span.run13 {
+  background-color: rgb(178, 239, 255);
+  display: block;
+}
+span.run14 {
+  background-color: rgb(178, 242, 255);
+  display: block;
+}
+span.run15 {
+  background-color: rgb(178, 246, 255);
+  display: block;
+}
+span.run16 {
+  background-color: rgb(178, 248, 255);
+  display: block;
+}
+span.run17 {
+  background-color: rgb(178, 251, 255);
+  display: block;
+}
+span.run18 {
+  background-color: rgb(178, 253, 255);
+  display: block;
+}
+span.run19 {
+  background-color: rgb(178, 255, 253);
+  display: block;
+}
+span.run20 {
+  background-color: rgb(178, 255, 249);
+  display: block;
+}
+span.run21 {
+  background-color: rgb(178, 255, 247);
+  display: block;
+}
+span.run22 {
+  background-color: rgb(178, 255, 244);
+  display: block;
+}
+span.run23 {
+  background-color: rgb(178, 255, 242);
+  display: block;
+}
+span.run24 {
+  background-color: rgb(178, 255, 239);
+  display: block;
+}
+span.run25 {
+  background-color: rgb(178, 255, 235);
+  display: block;
+}
+span.run26 {
+  background-color: rgb(178, 255, 233);
+  display: block;
+}
+span.run27 {
+  background-color: rgb(178, 255, 230);
+  display: block;
+}
+span.run28 {
+  background-color: rgb(178, 255, 228);
+  display: block;
+}
+span.run29 {
+  background-color: rgb(178, 255, 225);
+  display: block;
+}
+span.run30 {
+  background-color: rgb(178, 255, 221);
+  display: block;
+}
+span.run31 {
+  background-color: rgb(178, 255, 219);
+  display: block;
+}
+span.run32 {
+  background-color: rgb(178, 255, 216);
+  display: block;
+}
+span.run33 {
+  background-color: rgb(178, 255, 214);
+  display: block;
+}
+span.run34 {
+  background-color: rgb(178, 255, 211);
+  display: block;
+}
+span.run35 {
+  background-color: rgb(178, 255, 207);
+  display: block;
+}
+span.run36 {
+  background-color: rgb(178, 255, 205);
+  display: block;
+}
+span.run37 {
+  background-color: rgb(178, 255, 202);
+  display: block;
+}
+span.run38 {
+  background-color: rgb(178, 255, 200);
+  display: block;
+}
+span.run39 {
+  background-color: rgb(178, 255, 197);
+  display: block;
+}
+span.run40 {
+  background-color: rgb(178, 255, 193);
+  display: block;
+}
+span.run41 {
+  background-color: rgb(178, 255, 191);
+  display: block;
+}
+span.run42 {
+  background-color: rgb(178, 255, 188);
+  display: block;
+}
+span.run43 {
+  background-color: rgb(178, 255, 186);
+  display: block;
+}
+span.run44 {
+  background-color: rgb(178, 255, 183);
+  display: block;
+}
+span.run45 {
+  background-color: rgb(178, 255, 179);
+  display: block;
+}
+span.run46 {
+  background-color: rgb(179, 255, 178);
+  display: block;
+}
+span.run47 {
+  background-color: rgb(182, 255, 178);
+  display: block;
+}
+span.run48 {
+  background-color: rgb(184, 255, 178);
+  display: block;
+}
+span.run49 {
+  background-color: rgb(187, 255, 178);
+  display: block;
+}
+span.run50 {
+  background-color: rgb(191, 255, 178);
+  display: block;
+}
+span.run51 {
+  background-color: rgb(193, 255, 178);
+  display: block;
+}
+span.run52 {
+  background-color: rgb(196, 255, 178);
+  display: block;
+}
+span.run53 {
+  background-color: rgb(198, 255, 178);
+  display: block;
+}
+span.run54 {
+  background-color: rgb(201, 255, 178);
+  display: block;
+}
+span.run55 {
+  background-color: rgb(205, 255, 178);
+  display: block;
+}
+span.run56 {
+  background-color: rgb(207, 255, 178);
+  display: block;
+}
+span.run57 {
+  background-color: rgb(210, 255, 178);
+  display: block;
+}
+span.run58 {
+  background-color: rgb(212, 255, 178);
+  display: block;
+}
+span.run59 {
+  background-color: rgb(215, 255, 178);
+  display: block;
+}
+span.run60 {
+  background-color: rgb(219, 255, 178);
+  display: block;
+}
+span.run61 {
+  background-color: rgb(221, 255, 178);
+  display: block;
+}
+span.run62 {
+  background-color: rgb(224, 255, 178);
+  display: block;
+}
+span.run63 {
+  background-color: rgb(226, 255, 178);
+  display: block;
+}
+span.run64 {
+  background-color: rgb(229, 255, 178);
+  display: block;
+}
+span.run65 {
+  background-color: rgb(233, 255, 178);
+  display: block;
+}
+span.run66 {
+  background-color: rgb(235, 255, 178);
+  display: block;
+}
+span.run67 {
+  background-color: rgb(238, 255, 178);
+  display: block;
+}
+span.run68 {
+  background-color: rgb(240, 255, 178);
+  display: block;
+}
+span.run69 {
+  background-color: rgb(243, 255, 178);
+  display: block;
+}
+span.run70 {
+  background-color: rgb(247, 255, 178);
+  display: block;
+}
+span.run71 {
+  background-color: rgb(249, 255, 178);
+  display: block;
+}
+span.run72 {
+  background-color: rgb(252, 255, 178);
+  display: block;
+}
+span.run73 {
+  background-color: rgb(255, 255, 178);
+  display: block;
+}
+span.run74 {
+  background-color: rgb(255, 252, 178);
+  display: block;
+}
+span.run75 {
+  background-color: rgb(255, 248, 178);
+  display: block;
+}
+span.run76 {
+  background-color: rgb(255, 246, 178);
+  display: block;
+}
+span.run77 {
+  background-color: rgb(255, 243, 178);
+  display: block;
+}
+span.run78 {
+  background-color: rgb(255, 240, 178);
+  display: block;
+}
+span.run79 {
+  background-color: rgb(255, 238, 178);
+  display: block;
+}
+span.run80 {
+  background-color: rgb(255, 234, 178);
+  display: block;
+}
+span.run81 {
+  background-color: rgb(255, 232, 178);
+  display: block;
+}
+span.run82 {
+  background-color: rgb(255, 229, 178);
+  display: block;
+}
+span.run83 {
+  background-color: rgb(255, 226, 178);
+  display: block;
+}
+span.run84 {
+  background-color: rgb(255, 224, 178);
+  display: block;
+}
+span.run85 {
+  background-color: rgb(255, 220, 178);
+  display: block;
+}
+span.run86 {
+  background-color: rgb(255, 218, 178);
+  display: block;
+}
+span.run87 {
+  background-color: rgb(255, 215, 178);
+  display: block;
+}
+span.run88 {
+  background-color: rgb(255, 212, 178);
+  display: block;
+}
+span.run89 {
+  background-color: rgb(255, 210, 178);
+  display: block;
+}
+span.run90 {
+  background-color: rgb(255, 206, 178);
+  display: block;
+}
+span.run91 {
+  background-color: rgb(255, 204, 178);
+  display: block;
+}
+span.run92 {
+  background-color: rgb(255, 201, 178);
+  display: block;
+}
+span.run93 {
+  background-color: rgb(255, 198, 178);
+  display: block;
+}
+span.run94 {
+  background-color: rgb(255, 196, 178);
+  display: block;
+}
+span.run95 {
+  background-color: rgb(255, 192, 178);
+  display: block;
+}
+span.run96 {
+  background-color: rgb(255, 189, 178);
+  display: block;
+}
+span.run97 {
+  background-color: rgb(255, 187, 178);
+  display: block;
+}
+span.run98 {
+  background-color: rgb(255, 184, 178);
+  display: block;
+}
+span.run99 {
+  background-color: rgb(255, 182, 178);
+  display: block;
+}
+span.run100 {
+  background-color: rgb(255, 178, 178);
+  display: block;
+}
+</style>
+    </head>
+  <body><h3>C0 code coverage information</h3>
+    <p>Generated on Fri Dec 05 23:49:33 -0800 2008 with <a href='http://eigenclass.org/hiki/rcov'>rcov 0.8.1.2</a>
+      </p>
+    <hr/>
+    <pre><span class='marked0'>Code reported as executed by Ruby looks like this...
+</span><span class='marked1'>and this: this line is also marked as covered.
+</span><span class='inferred0'>Lines considered as run by rcov, but not reported by Ruby, look like this,
+</span><span class='inferred1'>and this: these lines were inferred by rcov (using simple heuristics).
+</span><span class='uncovered0'>Finally, here&apos;s a line marked as not executed.
+</span></pre>                       
+<table class='report'><thead><tr><td class='heading'>Name</td>
+      <td class='heading'>Total lines</td>
+      <td class='heading'>Lines of code</td>
+      <td class='heading'>Total coverage</td>
+      <td class='heading'>Code coverage</td>
+      </tr>
+    </thead>
+  <tbody><tr class='light'><td><a href='-Library-Ruby-Gems-1_8-gems-scrobbler-0_2_0-lib-scrobbler-artist_rb.html'>/Library/Ruby/Gems/1.8/gems/scrobbler-0.2.0/lib/scrobbler/artist.rb</a>
+        </td>
+      <td class='lines_total'><tt>127</tt>
+        </td>
+      <td class='lines_code'><tt>55</tt>
+        </td>
+      <td><table cellspacing='0' cellpadding='0' align='right'><tr><td><tt class='coverage_total'>66.1%</tt>
+              &nbsp;</td>
+            <td><table cellspacing='0' class='percent_graph' cellpadding='0' width='100'><tr><td class='covered' width='66'/>
+                  <td class='uncovered' width='34'/>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      <td><table cellspacing='0' cellpadding='0' align='right'><tr><td><tt class='coverage_code'>27.3%</tt>
+              &nbsp;</td>
+            <td><table cellspacing='0' class='percent_graph' cellpadding='0' width='100'><tr><td class='covered' width='27'/>
+                  <td class='uncovered' width='73'/>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<pre><span class="inferred0"><a name="line1"></a>  1 # Below are examples of how to find an artists top tracks and similar artists.
+</span><span class="inferred1"><a name="line2"></a>  2 # 
+</span><span class="inferred0"><a name="line3"></a>  3 #   artist = Scrobbler::Artist.new('Carrie Underwood')
+</span><span class="inferred1"><a name="line4"></a>  4 # 
+</span><span class="inferred0"><a name="line5"></a>  5 #   puts 'Top Tracks'
+</span><span class="inferred1"><a name="line6"></a>  6 #   puts &quot;=&quot; * 10
+</span><span class="inferred0"><a name="line7"></a>  7 #   artist.top_tracks.each { |t| puts &quot;(#{t.reach}) #{t.name}&quot; }
+</span><span class="inferred1"><a name="line8"></a>  8 # 
+</span><span class="inferred0"><a name="line9"></a>  9 #   puts
+</span><span class="inferred1"><a name="line10"></a> 10 # 
+</span><span class="inferred0"><a name="line11"></a> 11 #   puts 'Similar Artists'
+</span><span class="inferred1"><a name="line12"></a> 12 #   puts &quot;=&quot; * 15
+</span><span class="inferred0"><a name="line13"></a> 13 #   artist.similar.each { |a| puts &quot;(#{a.match}%) #{a.name}&quot; }
+</span><span class="inferred1"><a name="line14"></a> 14 # 
+</span><span class="inferred0"><a name="line15"></a> 15 # Would output something similar to:
+</span><span class="inferred1"><a name="line16"></a> 16 # 
+</span><span class="inferred0"><a name="line17"></a> 17 #   Top Tracks
+</span><span class="inferred1"><a name="line18"></a> 18 #   ==========
+</span><span class="inferred0"><a name="line19"></a> 19 #   (8797) Before He Cheats
+</span><span class="inferred1"><a name="line20"></a> 20 #   (3574) Don't Forget to Remember Me
+</span><span class="inferred0"><a name="line21"></a> 21 #   (3569) Wasted
+</span><span class="inferred1"><a name="line22"></a> 22 #   (3246) Some Hearts
+</span><span class="inferred0"><a name="line23"></a> 23 #   (3142) Jesus, Take the Wheel
+</span><span class="inferred1"><a name="line24"></a> 24 #   (2600) Starts With Goodbye
+</span><span class="inferred0"><a name="line25"></a> 25 #   (2511) Jesus Take The Wheel
+</span><span class="inferred1"><a name="line26"></a> 26 #   (2423) Inside Your Heaven
+</span><span class="inferred0"><a name="line27"></a> 27 #   (2328) Lessons Learned
+</span><span class="inferred1"><a name="line28"></a> 28 #   (2040) I Just Can't Live a Lie
+</span><span class="inferred0"><a name="line29"></a> 29 #   (1899) Whenever You Remember
+</span><span class="inferred1"><a name="line30"></a> 30 #   (1882) We're Young and Beautiful
+</span><span class="inferred0"><a name="line31"></a> 31 #   (1854) That's Where It Is
+</span><span class="inferred1"><a name="line32"></a> 32 #   (1786) I Ain't in Checotah Anymore
+</span><span class="inferred0"><a name="line33"></a> 33 #   (1596) The Night Before (Life Goes On)
+</span><span class="inferred1"><a name="line34"></a> 34 #   
+</span><span class="inferred0"><a name="line35"></a> 35 #   Similar Artists
+</span><span class="inferred1"><a name="line36"></a> 36 #   ===============
+</span><span class="inferred0"><a name="line37"></a> 37 #   (100%) Rascal Flatts
+</span><span class="inferred1"><a name="line38"></a> 38 #   (84.985%) Keith Urban
+</span><span class="inferred0"><a name="line39"></a> 39 #   (84.007%) Kellie Pickler
+</span><span class="inferred1"><a name="line40"></a> 40 #   (82.694%) Katharine McPhee
+</span><span class="inferred0"><a name="line41"></a> 41 #   (81.213%) Martina McBride
+</span><span class="inferred1"><a name="line42"></a> 42 #   (79.397%) Faith Hill
+</span><span class="inferred0"><a name="line43"></a> 43 #   (77.121%) Tim McGraw
+</span><span class="inferred1"><a name="line44"></a> 44 #   (75.191%) Jessica Simpson
+</span><span class="inferred0"><a name="line45"></a> 45 #   (75.182%) Sara Evans
+</span><span class="inferred1"><a name="line46"></a> 46 #   (75.144%) The Wreckers
+</span><span class="inferred0"><a name="line47"></a> 47 #   (73.034%) Kenny Chesney
+</span><span class="inferred1"><a name="line48"></a> 48 #   (71.765%) Dixie Chicks
+</span><span class="inferred0"><a name="line49"></a> 49 #   (71.084%) Kelly Clarkson
+</span><span class="inferred1"><a name="line50"></a> 50 #   (69.535%) Miranda Lambert
+</span><span class="inferred0"><a name="line51"></a> 51 #   (66.952%) LeAnn Rimes
+</span><span class="inferred1"><a name="line52"></a> 52 #   (66.398%) Mandy Moore
+</span><span class="inferred0"><a name="line53"></a> 53 #   (65.817%) Bo Bice
+</span><span class="inferred1"><a name="line54"></a> 54 #   (65.279%) Diana DeGarmo
+</span><span class="inferred0"><a name="line55"></a> 55 #   (65.115%) Gretchen Wilson
+</span><span class="inferred1"><a name="line56"></a> 56 #   (62.982%) Clay Aiken
+</span><span class="inferred0"><a name="line57"></a> 57 #   (62.436%) Ashlee Simpson
+</span><span class="inferred1"><a name="line58"></a> 58 #   (62.160%) Christina Aguilera
+</span><span class="marked0"><a name="line59"></a> 59 module Scrobbler
+</span><span class="marked1"><a name="line60"></a> 60   class Artist &lt; Base
+</span><span class="marked0"><a name="line61"></a> 61     attr_accessor :name, :mbid, :playcount, :rank, :url, :thumbnail, :image, :reach, :count, :streamable
+</span><span class="marked1"><a name="line62"></a> 62     attr_accessor :chartposition
+</span><span class="inferred0"><a name="line63"></a> 63     
+</span><span class="inferred1"><a name="line64"></a> 64     # used for similar artists
+</span><span class="marked0"><a name="line65"></a> 65     attr_accessor :match
+</span><span class="inferred1"><a name="line66"></a> 66     
+</span><span class="marked0"><a name="line67"></a> 67     class &lt;&lt; self
+</span><span class="marked1"><a name="line68"></a> 68       def new_from_xml(xml, doc=nil)
+</span><span class="uncovered0"><a name="line69"></a> 69         name             = (xml).at(:name).inner_html           if (xml).at(:name)
+</span><span class="uncovered1"><a name="line70"></a> 70         # occasionally name can be found in root of artist element (&lt;artist name=&quot;&quot;&gt;) rather than as an element (&lt;name&gt;)
+</span><span class="uncovered0"><a name="line71"></a> 71         name             = xml['name']                          if name.nil? &amp;&amp; xml['name']
+</span><span class="uncovered1"><a name="line72"></a> 72         a                = Artist.new(name)
+</span><span class="uncovered0"><a name="line73"></a> 73         a.mbid           = (xml).at(:mbid).inner_html           if (xml).at(:mbid)
+</span><span class="uncovered1"><a name="line74"></a> 74         a.playcount      = (xml).at(:playcount).inner_html      if (xml).at(:playcount)
+</span><span class="uncovered0"><a name="line75"></a> 75         a.rank           = (xml).at(:rank).inner_html           if (xml).at(:rank)
+</span><span class="uncovered1"><a name="line76"></a> 76         a.url            = (xml).at(:url).inner_html            if (xml).at(:url)
+</span><span class="uncovered0"><a name="line77"></a> 77         a.thumbnail      = (xml).at(:thumbnail).inner_html      if (xml).at(:thumbnail)
+</span><span class="uncovered1"><a name="line78"></a> 78         a.thumbnail      = (xml).at(:image_small).inner_html    if a.thumbnail.nil? &amp;&amp; (xml).at(:image_small)
+</span><span class="uncovered0"><a name="line79"></a> 79         a.image          = (xml).at(:image).inner_html          if (xml).at(:image)
+</span><span class="uncovered1"><a name="line80"></a> 80         a.reach          = (xml).at(:reach).inner_html          if (xml).at(:reach)
+</span><span class="uncovered0"><a name="line81"></a> 81         a.match          = (xml).at(:match).inner_html          if (xml).at(:match)
+</span><span class="uncovered1"><a name="line82"></a> 82         a.chartposition = (xml).at(:chartposition).inner_html  if (xml).at(:chartposition)
+</span><span class="uncovered0"><a name="line83"></a> 83 
+</span><span class="uncovered1"><a name="line84"></a> 84         # in top artists for tag
+</span><span class="uncovered0"><a name="line85"></a> 85         a.count          = xml['count']                         if xml['count']
+</span><span class="uncovered1"><a name="line86"></a> 86         a.streamable     = xml['streamable']                    if xml['streamable']
+</span><span class="uncovered0"><a name="line87"></a> 87         a.streamable     = (xml).at(:streamable).inner_html == '1' ? 'yes' : 'no' if a.streamable.nil? &amp;&amp; (xml).at(:streamable)
+</span><span class="uncovered1"><a name="line88"></a> 88         a
+</span><span class="uncovered0"><a name="line89"></a> 89       end
+</span><span class="uncovered1"><a name="line90"></a> 90     end
+</span><span class="inferred0"><a name="line91"></a> 91     
+</span><span class="marked1"><a name="line92"></a> 92     def initialize(name)
+</span><span class="uncovered0"><a name="line93"></a> 93       raise ArgumentError, &quot;Name is required&quot; if name.blank?
+</span><span class="uncovered1"><a name="line94"></a> 94       @name = name
+</span><span class="uncovered0"><a name="line95"></a> 95     end
+</span><span class="inferred1"><a name="line96"></a> 96     
+</span><span class="marked0"><a name="line97"></a> 97     def api_path
+</span><span class="uncovered1"><a name="line98"></a> 98       &quot;/#{API_VERSION}/artist/#{CGI::escape(name)}&quot;
+</span><span class="uncovered0"><a name="line99"></a> 99     end
+</span><span class="inferred1"><a name="line100"></a>100     
+</span><span class="marked0"><a name="line101"></a>101     def current_events(format=:ics)
+</span><span class="uncovered1"><a name="line102"></a>102       format = :ics if format.to_s == 'ical'
+</span><span class="uncovered0"><a name="line103"></a>103       raise ArgumentError unless ['ics', 'rss'].include?(format.to_s)
+</span><span class="uncovered1"><a name="line104"></a>104       &quot;#{API_URL.chop}#{api_path}/events.#{format}&quot;
+</span><span class="uncovered0"><a name="line105"></a>105     end
+</span><span class="inferred1"><a name="line106"></a>106     
+</span><span class="marked0"><a name="line107"></a>107     def similar(force=false)
+</span><span class="uncovered1"><a name="line108"></a>108       get_instance(:similar, :similar, :artist, force)
+</span><span class="uncovered0"><a name="line109"></a>109     end
+</span><span class="inferred1"><a name="line110"></a>110     
+</span><span class="marked0"><a name="line111"></a>111     def top_fans(force=false)
+</span><span class="uncovered1"><a name="line112"></a>112       get_instance(:fans, :top_fans, :user, force)
+</span><span class="uncovered0"><a name="line113"></a>113     end
+</span><span class="inferred1"><a name="line114"></a>114     
+</span><span class="marked0"><a name="line115"></a>115     def top_tracks(force=false)
+</span><span class="uncovered1"><a name="line116"></a>116       get_instance(:toptracks, :top_tracks, :track, force)
+</span><span class="uncovered0"><a name="line117"></a>117     end
+</span><span class="inferred1"><a name="line118"></a>118     
+</span><span class="marked0"><a name="line119"></a>119     def top_albums(force=false)
+</span><span class="uncovered1"><a name="line120"></a>120       get_instance(:topalbums, :top_albums, :album, force)
+</span><span class="uncovered0"><a name="line121"></a>121     end
+</span><span class="inferred1"><a name="line122"></a>122     
+</span><span class="marked0"><a name="line123"></a>123     def top_tags(force=false)
+</span><span class="uncovered1"><a name="line124"></a>124       get_instance(:toptags, :top_tags, :tag, force)
+</span><span class="uncovered0"><a name="line125"></a>125     end
+</span><span class="uncovered1"><a name="line126"></a>126   end
+</span><span class="uncovered0"><a name="line127"></a>127 end
+</span></pre><hr/>
+    <p>Generated using the <a href='http://eigenclass.org/hiki.rb?rcov'>rcov code coverage analysis tool for Ruby</a>
+   version 0.8.1.2.</p>
+<p><a href='http://validator.w3.org/check/referer'><img src='http://www.w3.org/Icons/valid-xhtml10' height='31' alt='Valid XHTML 1.0!' width='88'/>
+        </a>
+      <a href='http://jigsaw.w3.org/css-validator/check/referer'><img src='http://jigsaw.w3.org/css-validator/images/vcss' alt='Valid CSS!' style='border:0;width:88px;height:31px'/>
+        </a>
+      </p>
+    </body>
+  </html>

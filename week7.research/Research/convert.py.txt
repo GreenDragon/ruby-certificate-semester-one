@@ -1,0 +1,76 @@
+#!/usr/bin/python
+
+import os, os.path, sys
+import xml.sax, xml.sax.handler
+
+class iTunesHandler(xml.sax.handler.ContentHandler):
+	def __init__(self):
+		self.tagLevel = {}
+		self.inTracks = False
+		self.inPlaylists = False
+		self.inKey = False
+		self.inStrOrInt = False
+		self.lastKeyName = None
+		self.lastTrackID = None
+		self.tracks = {}
+		self.playlists = {}
+		self.currentPlaylist = None
+
+	def startElement(self, name, attributes):
+		if name == "key":
+			self.inKey = True
+		elif name == "dict":
+			if self.lastKeyName == "Tracks":
+				self.inTracks = True
+		elif name == "array" and self.lastKeyName == "Playlists":
+			self.inTracks = False
+			self.inPlaylists = True
+		elif name in ["string", "integer"]:
+			self.inStrOrInt = True
+
+	def characters(self, content):
+		if self.inKey:
+			self.lastKeyName = content
+
+		elif self.inTracks:
+			if self.inStrOrInt and self.lastKeyName == "Track ID":
+				self.lastTrackID = content
+			elif self.inStrOrInt and self.lastKeyName == "Location":
+				if self.lastTrackID in self.tracks:
+					self.tracks[self.lastTrackID] += content
+				else:
+					self.tracks[self.lastTrackID] = content
+		elif self.inPlaylists:
+			if self.inStrOrInt and self.lastKeyName == "Track ID":
+				self.playlists[self.currentPlaylist].append(content)
+			elif self.inStrOrInt and self.lastKeyName == "Name":
+				self.playlists[content] = []
+				self.currentPlaylist = content
+
+	def endElement(self, name):
+		if name == "key":
+			self.inKey = False
+		elif name in ["string", "integer"]:
+			self.inStrOrInt = False
+			
+
+if __name__ == "__main__":
+	if not len(sys.argv) == 3:
+		print "Please provide the iTunes XML file name and then the playlist to dump."
+		sys.exit(1)
+
+	iTunesXml = sys.argv[1]
+	Playlist = sys.argv[2]
+
+	handler = iTunesHandler()
+	parser = xml.sax.make_parser()
+	parser.setContentHandler(handler)
+	parser.parse(sys.argv[1])
+
+	if not Playlist in handler.playlists:
+		print "Playlist not found!"
+		sys.exit(1)
+
+	import urllib
+	for trackId in handler.playlists[Playlist]:
+		print urllib.unquote(handler.tracks[trackId])

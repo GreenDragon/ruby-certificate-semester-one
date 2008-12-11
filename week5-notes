@@ -1,0 +1,71 @@
+
+##
+# Week 5 Homework
+
+assert_raise InsufficientFundsError do
+	@bank.withdraw("bob", 9999999999)
+end
+
+##
+# Bank
+
+Bank
+	accounts
+	open account
+	close account
+	# front end accessor functions
+	withdraw from account
+	deposit to account
+
+Account
+	name
+	balance
+	withdraw
+	deposit
+
+
+#
+# Must be able to:
+#
+# * Make new accounts.
+
+Create account
+Create account with balance
+Fail if already exists
+
+# * Close accounts.
+
+Close account ( dump cash )
+Fail if already closed
+
+# * Make deposits for a specific account.
+
+Add money ( check balance )
+
+# * Make withdrawls for a specific account.
+
+Remove money
+Fail if no balance
+
+#
+# How you do it is entirely up to you.
+
+##
+# Vending Machine
+#
+# Must be able to:
+#
+# * Hold multiple products with differing prices.
+# * Know when it is out of a specific product.
+# * Refill specific products.
+# * Sell specific products (and therefor deal with user input and payments)
+
+##
+# Parking Lot
+#
+# Must be able to:
+#
+# * Open close gate/bar thingy
+# * Take money for parking spot #
+# * Know how long the car can be there and mark it for fine if past time
+

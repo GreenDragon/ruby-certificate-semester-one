@@ -1,0 +1,81 @@
+
+This week we'll be working on more "real world" applications of
+ruby. One of the strongholds of ruby is sysadmin work. Sysadmins work
+on fileservers, webservers, networks, and everything else that we need
+to keep things running. Most of the time, they're walking into an
+unfamiliar environment or trying to diagnose a problem that they don't
+have a handle on yet. So, to help them out, we're going to work on two
+utilities that will help them figure stuff out.
+
+## Problem #1: power grep
+
+Admins need to look at network information and file systems alike, so
+why not give them one tool to help? Power grep will search both files
+and sockets:
+
+  pgrep -i error /var/log/system.log http://www.example.com/status.txt
+
+That's right, I want to search for "error" on both the system.log and
+on a url in the same invocation!
+
+  Minimum requirements:
+
+	1) Must search files and http urls, as many as passed in.
+
+	2) -i for case insensitive searches.
+
+	3) -f for "fast grep" - no regular expression, just literal text.
+
+	4) -q for quiet, just denote match via exit code
+
+  Remember: each feature set must be fully tested. The only thing that
+  shouldn't bother with tests is the single line at the bottom:
+
+	PowerGrep.run(ARGV) if $0 == __FILE__
+
+  How you design, break that up, and test/mock/stub is up to you.  Use
+  the mailing list for help.
+
+## Problem #2: file statistics
+
+Admins often have to deal with large and unfamiliar file systems under
+severe time constraints. If a disk is full, or acting weird, they need
+to be able to react quickly. Let's help them out. Design a program
+that will give them some useful information that might help them
+figure out what to do on short notice.
+
+  Minimum requirements:
+
+	1) Must walk a whole file tree and provide "useful" information.
+
+	2) Must report the N biggest files names and sizes in readable fashion.
+
+	3) Must report the N biggest "groups" of file types (by file extension).
+
+	4) Must report the N oldest files names, dates, and sizes.
+
+	5) N can be specified as a command-line argument (-n), defaulting to 10.
+
+  In order to test this, break it up in such a way that everything but
+  the actual file system walker can be tested. Something like:
+
+    class AdminUtil
+      def self.run dir = '.'
+        au = AdminUtil.new
+        data = au.gather_data dir
+        au.report data
+      end
+    
+      def initialize
+        # 
+      end
+    
+      def report stats
+        # stats is a hash of path => [File::Stat] info
+      end
+    end
+    
+    AdminUtil.run if __FILE__ == $0
+
+Bonus points for those who mock out the file system walker itself so
+it can be tested as well.

@@ -1,0 +1,17 @@
+Loaded suite test/test_admin_util
+Started
+.411516, testdir/2czc1ua.jpg
+189430, testdir/tobiuo.jpg
+128095, testdir/sheekymacro.jpg
+108674, testdir/2008-10-12-warning-in-case-of-terrorist-attack.png
+29696, testdir/2008_WA_Permie.doc
+25513, testdir/political-pictures-barack-obama-chill-out-got-this.jpg
+886, testdir/PORTS.txt
+736, testdir/GEM.20081117
+288, testdir/CPAN.txt
+173, testdir/Ohana.txt
+135, testdir/LJ.txt
+...
+Finished in 0.001884 seconds.
+
+4 tests, 4 assertions, 0 failures, 0 errors

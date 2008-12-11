@@ -1,0 +1,18 @@
+jhowe@fleur:~
+$ irb
+>> require 'scrobbler'
+=> true
+>> user = Scrobbler::User.new('greendragon64')
+=> #<Scrobbler::User:0x1613d88 @username="greendragon64">
+>> user.recent_tracks.each { |t| puts.name }
+
+NoMethodError: undefined method `name' for nil:NilClass
+        from (irb):3
+        from (irb):3:in `each'
+        from (irb):3
+>> user.recent_tracks.each { |t| puts t.name }
+I Put a Spell on You
+=> [#<Scrobbler::Track:0x16064bc @artist_mbid="185af318-55c7-405f-8b00-0fa308e56da9", @date_uts="1227874660", @date=Fri Nov 28 12:17:00 -0800 2008, @streamable="true", @mbid="", @album_mbid="b7e59b1f-9617-410c-a32e-ff8dd18d179a", @name="I Put a Spell on You", @album="Cow Fingers And Mosquito Pie", @url="http://www.last.fm/music/Screamin%27+Jay+Hawkins/_/I+Put+a+Spell+on+You", @artist="Screamin' Jay Hawkins">]
+>> artist = Scrobbler::Artist.new('Megadeth')
+=> #<Scrobbler::Artist:0x11b9094 @name="Megadeth">
+>> artist.similar.each { |a| puts "(#{a.match}%) #{a.name}" }

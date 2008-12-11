@@ -1,0 +1,5 @@
+add a rakefile with a test task
+add a submit task that packages up uniquely and uploads it to me
+
+
+go to heroku.com and move rubiholic there.
